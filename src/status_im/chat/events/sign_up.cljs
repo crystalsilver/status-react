@@ -141,8 +141,7 @@
   (fn [{:keys [db random-id now] :as cofx} [contacts]]
     (-> {:db db}
         (accounts-events/account-update {:signed-up?   true
-                                         :last-updated now})
-        (assoc :dispatch (sign-up/contacts-synchronised-event random-id)))))
+                                         :last-updated now}))))
 
 (handlers/register-handler-fx
   ::http-request-failure
