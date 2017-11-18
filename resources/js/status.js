@@ -13,7 +13,8 @@ function scopeToBitMask(scope) {
         ((scope != null && scope.indexOf("group-chats") > -1) ? 4 : 0) |
         ((scope != null && scope.indexOf("anonymous") > -1) ? 8 : 0) |
         ((scope != null && scope.indexOf("registered") > -1) ? 16 : 0) |
-        ((scope != null && scope.indexOf("not-for-bots") > -1) ? 32 : 0);
+        ((scope != null && scope.indexOf("dapps") > -1) ? 32 : 0) |
+        ((scope != null && scope.indexOf("humans") > -1) ? 64 : 0);
 }
 
 function Command() {

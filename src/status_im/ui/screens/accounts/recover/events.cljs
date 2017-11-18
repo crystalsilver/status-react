@@ -45,7 +45,9 @@
                    :signing-phrase      phrase}]
       (log/debug "account-recovered")
       (when-not (str/blank? public-key)
-        (-> (accounts-events/add-account db account)
+        (-> db
+            (update :accounts/recover assoc :passphrase "" :password "")
+            (accounts-events/add-account account)
             (assoc :dispatch [:navigate-to-clean :accounts]))))))
 
 (register-handler-fx

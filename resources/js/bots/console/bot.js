@@ -458,7 +458,7 @@ var phoneConfig = {
     icon: "phone_white",
     color: "#5bb2a2",
     title: I18n.t('phone_title'),
-    scope: ["personal-chats", "registered"],
+    scope: ["personal-chats", "registered", "dapps"],
     description: I18n.t('phone_description'),
     sequentialParams: true,
     validator: function (params) {
@@ -558,7 +558,7 @@ var faucetCommandConfig ={
     title: I18n.t('faucet_title'),
     description: I18n.t('faucet_description'),
     color: "#7099e6",
-    scope: ["personal-chats", "registered"],
+    scope: ["personal-chats", "registered", "dapps"],
     params: [{
         name: "url",
         type: status.types.TEXT,
@@ -634,7 +634,7 @@ status.command({
     title: I18n.t('debug_mode_title'),
     description: I18n.t('debug_mode_description'),
     color: "#7099e6",
-    scope: ["personal-chats", "anonymous", "registered"],
+    scope: ["personal-chats", "registered", "dapps"],
     params: [{
         name: "mode",
         suggestions: debugSuggestions,
@@ -661,7 +661,7 @@ status.command({
 status.response({
     name: "confirmation-code",
     color: "#7099e6",
-    scope: ["personal-chats", "registered"],
+    scope: ["personal-chats", "registered", "dapps"],
     description: I18n.t('confirm_description'),
     sequentialParams: true,
     params: [{
@@ -699,7 +699,7 @@ status.response({
 status.response({
     name: "password",
     color: "#7099e6",
-    scope: ["personal-chats", "anonymous"],
+    scope: ["personal-chats", "anonymous", "dapps"],
     description: I18n.t('password_description'),
     icon: "lock_white",
     sequentialParams: true,
@@ -758,7 +758,7 @@ status.response({
 
 status.response({
     name: "grant-permissions",
-    scope: ["personal-chats", "anonymous", "registered"],
+    scope: ["personal-chats", "anonymous", "registered", "dapps"],
     color: "#7099e6",
     description: "Grant permissions",
     icon: "lock_white",

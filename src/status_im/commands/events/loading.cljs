@@ -89,7 +89,8 @@
   (let [member-scope (cond-> scope
                        (not (scope :global)) (conj jail-id))]
     (add-exclusive-choices member-scope [[:personal-chats :group-chats]
-                                         [:anonymous :registered]])))
+                                         [:anonymous :registered]
+                                         [:dapps :humans]])))
 
 (defn- index-by-access-scope-type
   [init jail-id items]

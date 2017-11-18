@@ -32,7 +32,7 @@ function locationsSuggestions (params) {
 status.command({
     name: "location",
     title: I18n.t('location_title'),
-    scope: ["global", "personal-chats", "group-chats", "registered", "not-for-bots"],
+    scope: ["global", "personal-chats", "group-chats", "registered", "humans"],
     description: I18n.t('location_description'),
     sequentialParams: true,
     hideSendButton: true,

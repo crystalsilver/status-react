@@ -17,7 +17,7 @@
 (def intro-message1-id "intro-message1")
 
 ;; TODO(janherich): figure out something better then this
-(def browse-command-ref ["browse" :command 23 "browse"])
-(def send-command-ref ["transactor" :command 51 "send"])
-(def request-command-ref ["transactor" :command 51 "request"])
-(def phone-command-ref ["console" :command 18 "phone"])
+(def browse-command-ref ["browse" :command 119 "browse"])
+(def send-command-ref ["transactor" :command 83 "send"])
+(def request-command-ref ["transactor" :command 83 "request"])
+(def phone-command-ref ["console" :command 50 "phone"])

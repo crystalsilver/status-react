@@ -535,7 +535,7 @@ function shortPreviewSend(params, context) {
 
 var personalSend = {
     name: "send",
-    scope: ["global", "personal-chats", "registered", "not-for-bots"],
+    scope: ["global", "personal-chats", "registered", "humans"],
     icon: "money_white",
     color: "#5fc48d",
     title: I18n.t('send_title'),
@@ -550,7 +550,7 @@ var personalSend = {
 
 var groupSend = {
     name: "send",
-    scope: ["global", "group-chats", "registered", "not-for-bots"],
+    scope: ["global", "group-chats", "registered", "humans"],
     icon: "money_white",
     color: "#5fc48d",
     title: I18n.t('send_title'),
@@ -740,7 +740,7 @@ function validateRequest(validateRecipient, params) {
 
 status.command({
     name: "request",
-    scope: ["global", "personal-chats", "registered", "not-for-bots"],
+    scope: ["global", "personal-chats", "registered", "humans"],
     icon: "money_white",
     color: "#5fc48d",
     title: I18n.t('request_title'),
@@ -754,7 +754,7 @@ status.command({
 
 status.command({
     name: "request",
-    scope: ["global", "group-chats", "registered", "not-for-bots"],
+    scope: ["global", "group-chats", "registered", "humans"],
     icon: "money_white",
     color: "#5fc48d",
     title: I18n.t('request_title'),

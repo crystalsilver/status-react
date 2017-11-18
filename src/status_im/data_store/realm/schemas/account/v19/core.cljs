@@ -47,39 +47,39 @@
 
 (def owner-command->new-props
   {;; console commands
-   ["console" "password"] {:content-command-ref ["console" :response 10 "password"]
-                           :content-command-scope-bitmask 10}
-   ["console" "debug"] {:content-command-ref ["console" :command 26 "debug"]
-                        :content-command-scope-bitmask 26}
-   ["console" "phone"] {:content-command-ref ["console" :response 18 "phone"]
-                        :content-command-scope-bitmask 18}
-   ["console" "confirmation-code"] {:content-command-ref ["console" :response 18 "confirmation-code"]
-                                    :content-command-scope-bitmask 18}
-   ["console" "faucet"] {:content-command-ref ["console" :command 18 "faucet"]
-                         :content-command-scope-bitmask 18}
+   ["console" "password"] {:content-command-ref ["console" :response 42 "password"]
+                           :content-command-scope-bitmask 42}
+   ["console" "debug"] {:content-command-ref ["console" :command 50 "debug"]
+                        :content-command-scope-bitmask 50}
+   ["console" "phone"] {:content-command-ref ["console" :response 50 "phone"]
+                        :content-command-scope-bitmask 50}
+   ["console" "confirmation-code"] {:content-command-ref ["console" :response 50 "confirmation-code"]
+                                    :content-command-scope-bitmask 50}
+   ["console" "faucet"] {:content-command-ref ["console" :command 50 "faucet"]
+                         :content-command-scope-bitmask 50}
    ;; mailman commands
-   ["mailman" "location"] {:content-command-ref ["mailman" :command 55 "location"]
-                           :content-command-scope-bitmask 55}
+   ["mailman" "location"] {:content-command-ref ["mailman" :command 87 "location"]
+                           :content-command-scope-bitmask 87}
    ;; transactor personal
-   ["transactor-personal" "send"] {:content-command-ref ["transactor" :command 51 "send"]
-                                   :content-command-scope-bitmask 51
+   ["transactor-personal" "send"] {:content-command-ref ["transactor" :command 83 "send"]
+                                   :content-command-scope-bitmask 83
                                    :bot "transactor"}
-   ["transactor-personal" "request"] {:content-command-ref ["transactor" :command 51 "request"]
-                                      :content-command-scope-bitmask 51
+   ["transactor-personal" "request"] {:content-command-ref ["transactor" :command 83 "request"]
+                                      :content-command-scope-bitmask 83
                                       :bot "transactor"}
    ;; transactor group
-   ["transactor-group" "send"] {:content-command-ref ["transactor" :command 53 "send"]
-                                :content-command-scope-bitmask 53
+   ["transactor-group" "send"] {:content-command-ref ["transactor" :command 85 "send"]
+                                :content-command-scope-bitmask 85
                                 :bot "transactor"}
-   ["transactor-group" "request"] {:content-command-ref ["transactor" :command 53 "request"]
-                                   :content-command-scope-bitmask 53
+   ["transactor-group" "request"] {:content-command-ref ["transactor" :command 85 "request"]
+                                   :content-command-scope-bitmask 85
                                    :bot "transactor"}})
 
 (def console-requests->new-props
   {;; console
-   ["password"] {:content-command-ref ["console" :response 10 "password"]}
-   ["phone"] {:content-command-ref ["console" :response 18 "phone"]}
-   ["confirmation-code"] {:content-command-ref ["console" :response 18 "confirmation-code"]}})
+   ["password"] {:content-command-ref ["console" :response 42 "password"]}
+   ["phone"] {:content-command-ref ["console" :response 50 "phone"]}
+   ["confirmation-code"] {:content-command-ref ["console" :response 50 "confirmation-code"]}})
 
 (defn update-commands [selector mapping new-realm content-type]
   (some-> new-realm

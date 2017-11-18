@@ -11,18 +11,21 @@
              {}
              name->ref))
 
+(defn- is-dapp? [all-contacts {:keys [identity]}]
+  (get-in all-contacts [identity :dapp?]))
+
 (defn commands-responses
   "Returns map of commands/responses eligible for current chat."
   [type access-scope->commands-responses {:keys [address]} {:keys [contacts group-chat]} all-contacts]
-  (let [bots-only?         (every? (fn [{:keys [identity]}]
-                                     (get-in all-contacts [identity :dapp?]))
-                                   contacts)
+  (let [dapps?             (some (partial is-dapp? all-contacts) contacts)
+        humans?            (some (comp not (partial is-dapp? all-contacts)) contacts)
         basic-access-scope (cond-> #{}
                              group-chat (conj :group-chats)
                              (not group-chat) (conj :personal-chats)
                              address (conj :registered)
                              (not address) (conj :anonymous)
-                             (not bots-only?) (conj :not-for-bots))
+                             dapps? (conj :dapps)
+                             humans? (conj :humans))
         global-access-scope (conj basic-access-scope :global)
         member-access-scopes (into #{} (map (comp (partial conj basic-access-scope) :identity))
                                    contacts)]
